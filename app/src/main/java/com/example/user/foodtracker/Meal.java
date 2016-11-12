@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
 public class Meal {
 
-//    private int id;
+//    private int id?;
     private String name;
     private MealType type;
     private ArrayList<Food> foodItems;
