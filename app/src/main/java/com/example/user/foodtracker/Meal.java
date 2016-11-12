@@ -37,4 +37,12 @@ public class Meal {
     public int foodItemsCount() {
         return mFoodItems.size();
     }
+
+    public int totalMealCalories() {
+        int counter = 0;
+        for ( Food item : mFoodItems ) {
+            counter += item.getCalories();
+        }
+        return counter;
+    }
 }

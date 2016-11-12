@@ -36,14 +36,17 @@ public class MealTest {
         assertEquals(MealType.LUNCH, meal.getType());
     }
 
-//    @Test
-//    public void testGetFoodItems() {
-//        assertEquals(, meal.getFoodItems());
-//    }
-
     @Test
-    public void testFoodInputToMeal() {
+    public void testFoodInputIntoMeal() {
         meal.addFoodItem(foodItem);
         assertEquals(1, meal.foodItemsCount());
     }
+
+    @Test
+    public void testTotalCaloriesForMeal() {
+        meal.addFoodItem(foodItem);
+        meal.addFoodItem(foodItem2);
+        assertEquals(750, meal.totalMealCalories());
+    }
+
 }
