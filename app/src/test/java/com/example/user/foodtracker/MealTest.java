@@ -46,7 +46,8 @@ public class MealTest {
     public void testTotalCaloriesForMeal() {
         meal.addFoodItem(foodItem);
         meal.addFoodItem(foodItem2);
-        assertEquals(750, meal.totalMealCalories());
+        meal.addFoodItem(foodItem3);
+        assertEquals(925, meal.totalMealCalories());
     }
 
 }
