@@ -7,21 +7,21 @@ package com.example.user.foodtracker;
 public class Food {
 
 //    private int id?;
-    private String name;
-    private int calories;
+    private String mName;
+    private int mCalories;
 //    private int mealId?;
 
-    public Food(String name, int calories) {
-        this.name = name;
-        this.calories = calories;
+    public Food(String mName, int mCalories) {
+        this.mName = mName;
+        this.mCalories = mCalories;
     }
 
     public String getName() {
-        return this.name;
+        return this.mName;
     }
 
     public int getCalories() {
-        return this.calories;
+        return this.mCalories;
     }
 
 }

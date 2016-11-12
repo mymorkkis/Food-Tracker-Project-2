@@ -1,6 +1,7 @@
 package com.example.user.foodtracker;
 
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 /**
@@ -10,20 +11,30 @@ import java.util.ArrayList;
 public class Meal {
 
 //    private int id?;
-    private String name;
-    private MealType type;
-    private ArrayList<Food> foodItems;
+    private String mName;
+    private MealType mType;
+    private ArrayList<Food> mFoodItems;
 
-    public Meal(String name, MealType type) {
-        this.name = name;
-        this.type = type;
+    public Meal(String mName, MealType mType) {
+        this.mName = mName;
+        this.mType = mType;
+        mFoodItems = new ArrayList<>();
     }
 
     public String getName() {
-        return this.name;
+        return this.mName;
     }
 
     public Enum getType() {
-        return this.type;
+        return this.mType;
+    }
+
+    public boolean addFoodItem(Food foodItem) {
+        mFoodItems.add(foodItem);
+        return true;
+    }
+
+    public int foodItemsCount() {
+        return mFoodItems.size();
     }
 }
