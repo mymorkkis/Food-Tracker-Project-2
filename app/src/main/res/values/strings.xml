@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">FoodTracker</string>
+    <string name="input_meal_activity_title">Meal Input Page</string>
 </resources>
