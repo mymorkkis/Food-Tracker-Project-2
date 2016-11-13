@@ -9,7 +9,7 @@
         android:textSize="35dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/textView1"/>
+        android:id="@+id/textViewName"/>
 
     <EditText
         android:textSize="25dp"
@@ -22,7 +22,7 @@
         android:textSize="35dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/textView2"/>
+        android:id="@+id/textViewType"/>
 
     <EditText
         android:textSize="25dp"
@@ -35,7 +35,7 @@
         android:textSize="35dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/textView3"/>
+        android:id="@+id/textViewCalories"/>
 
     <EditText
         android:textSize="25dp"
@@ -47,6 +47,6 @@
         android:text="Input Meal"
         android:layout_width="152dp"
         android:layout_height="wrap_content"
-        android:id="@+id/button1"/>
+        android:id="@+id/button_input_meal"/>
 
 </LinearLayout>
