@@ -26,8 +26,8 @@ public class FoodTracker extends AppCompatActivity {
             startActivity(intentInput);
             return true;
         }
-        if (item.getItemId() == R.id.action_show_meals_link) {
-            Intent intentShow = new Intent(FoodTracker.this, ShowMealsActivity.class);
+        if (item.getItemId() == R.id.action_view_meals_link) {
+            Intent intentShow = new Intent(FoodTracker.this, ViewMealsActivity.class);
             startActivity(intentShow);
             return true;
         }

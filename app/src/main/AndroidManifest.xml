@@ -26,8 +26,8 @@
         </activity>
 
         <activity
-            android:name=".ShowMealsActivity"
-            android:label="@string/take_to_show_meals_activity"
+            android:name=".ViewMealsActivity"
+            android:label="@string/take_to_view_meals_activity"
             android:parentActivityName=".FoodTracker">
         </activity>
 

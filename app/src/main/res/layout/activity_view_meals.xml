@@ -8,6 +8,6 @@
         android:text="View Previous Meal Data"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:id="@+id/button_show_meals"
+        android:id="@+id/button_view_meals"
         android:layout_weight="0.01" />
 </LinearLayout>
