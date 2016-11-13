@@ -6,26 +6,47 @@
 
     <TextView
         android:text="Meal Name: "
+        android:textSize="35dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/textView1" />
+        android:id="@+id/textView1"/>
+
+    <EditText
+        android:textSize="25dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/text_to_save_name"/>
 
     <TextView
         android:text="Meal Type: "
+        android:textSize="35dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/textView2" />
+        android:id="@+id/textView2"/>
+
+    <EditText
+        android:textSize="25dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/text_to_save_type"/>
 
     <TextView
         android:text="Total Calories: "
+        android:textSize="35dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/textView3" />
+        android:id="@+id/textView3"/>
+
+    <EditText
+        android:textSize="25dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/text_to_save_calories"/>
 
     <Button
         android:text="Input Meal"
         android:layout_width="152dp"
         android:layout_height="wrap_content"
-        android:id="@+id/button1" />
+        android:id="@+id/button1"/>
 
 </LinearLayout>
