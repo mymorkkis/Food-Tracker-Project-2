@@ -2,6 +2,7 @@ package com.example.user.foodtracker;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
@@ -37,17 +38,23 @@ public class FoodTrackerDatabase extends SQLiteOpenHelper {
     }
 
     public boolean insertData(String name, String type, String calories) {
-        SQLiteDatabase myDatabase = this.getReadableDatabase();
+        SQLiteDatabase mMyDatabase = this.getReadableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put(COL_2, name);
         contentValues.put(COL_3, type);
         contentValues.put(COL_4, calories);
-        long result = myDatabase.insert(TABLE_NAME, null, contentValues);
+        long result = mMyDatabase.insert(TABLE_NAME, null, contentValues);
         if (result == -1) {
             return false;
         } else {
             return true;
         }
+    }
+
+    public Cursor getAllData() {
+        SQLiteDatabase mMyDatabase = this.getReadableDatabase();
+        Cursor result = mMyDatabase.rawQuery("SELECT * FROM " + TABLE_NAME, null);
+        return result;
     }
 
 }
