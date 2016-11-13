@@ -20,7 +20,7 @@ public class MealTest {
 
     @Before
     public void before() {
-        meal = new Meal("Fish & Chips", MealType.LUNCH);
+        meal = new Meal("Rice, Beans & Banana", MealType.LUNCH);
         foodItem = new Food("White Rice", 300);
         foodItem2 = new Food("Black Beans", 450);
         foodItem3 = new Food("Banana", 175);
@@ -28,7 +28,7 @@ public class MealTest {
 
     @Test
     public void testGetMealName() {
-        assertEquals("Fish & Chips", meal.getName());
+        assertEquals("Rice, Beans & Banana", meal.getName());
     }
 
     @Test
