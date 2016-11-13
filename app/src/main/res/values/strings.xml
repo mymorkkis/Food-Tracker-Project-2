@@ -2,4 +2,5 @@
     <string name="app_name">FoodTracker</string>
     <string name="input_meal_activity_title">Meal Input Page</string>
     <string name="take_to_meal_activity">Input Meal</string>
+    <string name="take_to_show_meals_activity">Meal History</string>
 </resources>

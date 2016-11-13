@@ -2,4 +2,6 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:id="@+id/action_input_meal_link"
         android:title="@string/take_to_meal_activity"/>
+    <item android:id="@+id/action_show_meals_link"
+        android:title="@string/take_to_show_meals_activity"/>
 </menu>

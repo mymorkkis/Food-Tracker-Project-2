@@ -25,6 +25,12 @@
             android:parentActivityName=".FoodTracker">
         </activity>
 
+        <activity
+            android:name=".ShowMealsActivity"
+            android:label="@string/take_to_show_meals_activity"
+            android:parentActivityName=".FoodTracker">
+        </activity>
+
     </application>
 
 </manifest>

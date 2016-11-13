@@ -22,8 +22,13 @@ public class FoodTracker extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == R.id.action_input_meal_link) {
-            Intent intent = new Intent(FoodTracker.this, InputMealActivity.class);
-            startActivity(intent);
+            Intent intentInput = new Intent(FoodTracker.this, InputMealActivity.class);
+            startActivity(intentInput);
+            return true;
+        }
+        if (item.getItemId() == R.id.action_show_meals_link) {
+            Intent intentShow = new Intent(FoodTracker.this, ShowMealsActivity.class);
+            startActivity(intentShow);
             return true;
         }
         return super.onOptionsItemSelected(item);
