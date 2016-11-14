@@ -1,48 +1,116 @@
+//package com.example.user.foodtracker;
+//
+//
+//import java.lang.reflect.Array;
+//import java.util.ArrayList;
+//
+///**
+// * Created by user on 12/11/2016.
+// */
+//
+//public class Meal {
+//
+////    private int id?;
+//    private String mName;
+//    private MealType mType;
+//    private ArrayList<Food> mFoodItems;
+////    private FoodTrackerDatabase mFoodTrackerDatabase;
+//
+//    public Meal(String mName, MealType mType) {
+//        this.mName = mName;
+//        this.mType = mType;
+//        mFoodItems = new ArrayList<>();
+//    }
+//
+//    public String getName() {
+//        return this.mName;
+//    }
+//
+//    public Enum getType() {
+//        return this.mType;
+//    }
+//
+//    public boolean addFoodItem(Food foodItem) {
+//        mFoodItems.add(foodItem);
+//        return true;
+//    }
+//
+//    public int foodItemsCount() {
+//        return mFoodItems.size();
+//    }
+//
+//    public int totalMealCalories() {
+//        int counter = 0;
+//        for ( Food item : mFoodItems ) {
+//            counter += item.getCalories();
+//        }
+//        return counter;
+//    }
+//
+//    public void insertData() {
+//
+//    }
+//
+//}
+
 package com.example.user.foodtracker;
 
-
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 /**
- * Created by user on 12/11/2016.
+ * Created by user on 14/11/2016.
  */
 
 public class Meal {
 
-//    private int id?;
+    private int mId;
     private String mName;
-    private MealType mType;
-    private ArrayList<Food> mFoodItems;
+    private String mType;
+    private int mCalories;
 
-    public Meal(String mName, MealType mType) {
-        this.mName = mName;
-        this.mType = mType;
-        mFoodItems = new ArrayList<>();
+//    public Meal(String mName, String mType, int mCalories) {
+//        super();
+//        this.mName = mName;
+//        this.mType = mType;
+//        this.mCalories = mCalories;
+//    }
+
+    public void setId(int id) {
+        this.mId = id;
+    }
+
+    public void setName(String name) {
+        this.mName = name;
+    }
+
+    public void setType(String type) {
+        this.mType = type;
+    }
+
+    public void setCalories(int calories) {
+        this.mCalories = calories;
+    }
+
+    public int getId() {
+        return this.mId;
     }
 
     public String getName() {
         return this.mName;
     }
 
-    public Enum getType() {
+    public String getType() {
         return this.mType;
     }
 
-    public boolean addFoodItem(Food foodItem) {
-        mFoodItems.add(foodItem);
-        return true;
+    public int getCalories() {
+        return this.mCalories;
     }
 
-    public int foodItemsCount() {
-        return mFoodItems.size();
-    }
 
-    public int totalMealCalories() {
-        int counter = 0;
-        for ( Food item : mFoodItems ) {
-            counter += item.getCalories();
-        }
-        return counter;
+    @Override
+    public String toString() {
+        return "Meals [id=" + mId +", name=" + mName +
+                ", type=" + mType + ", calories=" + mCalories + "]";
     }
 }

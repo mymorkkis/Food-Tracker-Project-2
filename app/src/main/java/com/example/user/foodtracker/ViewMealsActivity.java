@@ -22,32 +22,32 @@ public class ViewMealsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_view_meals);
         mFoodTrackerDatabase = new FoodTrackerDatabase(this);
 
-        mBtnViewAllMeals = (Button)findViewById(R.id.button_view_meals);
-        viewAllMeals();
+//        mBtnViewAllMeals = (Button)findViewById(R.id.button_view_meals);
+//        viewAllMeals();
     }
 
-    public void viewAllMeals() {
-        mBtnViewAllMeals.setOnClickListener(
-                new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        Cursor result = mFoodTrackerDatabase.getAllData();
-                        if (result.getCount() == 0) {
-                            showMessage("ERROR", "No Data Found");
-                            return;
-                        }
-                        StringBuffer buffer = new StringBuffer();
-                        while (result.moveToNext()) {
-                            buffer.append("Name :" + result.getString(1) + "\n");
-                            buffer.append("Type :" + result.getString(2) + "\n");
-                            buffer.append("Calories :" + result.getString(3) + "\n\n");
-
-                        }
-                        showMessage("Previous Meals", buffer.toString());
-                    }
-                }
-        );
-    }
+//    public void viewAllMeals() {
+//        mBtnViewAllMeals.setOnClickListener(
+//                new View.OnClickListener() {
+//                    @Override
+//                    public void onClick(View view) {
+//                        Cursor result = mFoodTrackerDatabase.getMeals();
+//                        if (result.getCount() == 0) {
+//                            showMessage("ERROR", "No Data Found");
+//                            return;
+//                        }
+//                        StringBuffer buffer = new StringBuffer();
+//                        while (result.moveToNext()) {
+//                            buffer.append("Name :" + result.getString(1) + "\n");
+//                            buffer.append("Type :" + result.getString(2) + "\n");
+//                            buffer.append("Calories :" + result.getString(3) + "\n\n");
+//
+//                        }
+//                        showMessage("Previous Meals", buffer.toString());
+//                    }
+//                }
+//        );
+//    }
 
     public void showMessage(String title, String message) {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);

@@ -18,21 +18,25 @@ import android.widget.Toast;
 public class InputMealActivity extends AppCompatActivity {
 
     FoodTrackerDatabase mFoodTrackerDatabase;
+    Meal meal;
     EditText mEditName, mEditType, mEditCalories;
     Button mBtnAddMeal;
-//    mBtnEditMeal;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_input_meal);
         mFoodTrackerDatabase = new FoodTrackerDatabase(this);
+        meal = new Meal();
+
 
         //casting
         mEditName = (EditText)findViewById(R.id.text_to_save_name);
         mEditType = (EditText)findViewById(R.id.text_to_save_type);
         mEditCalories = (EditText)findViewById(R.id.text_to_save_calories);
         mBtnAddMeal = (Button)findViewById(R.id.button_input_meal);
+//        meal = new Meal(mEditName.getText().toString(), mEditType.getText().toString(), mEditCalories.getText().toString());
+
 //        mBtnEditMeal = (Button)findViewById(R.id.button_edit_meal);
         AddMeal();
 //        updateLastMeal();
@@ -43,21 +47,32 @@ public class InputMealActivity extends AppCompatActivity {
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        boolean isInsterted = mFoodTrackerDatabase.insertData(
-                                mEditName.getText().toString(), mEditType.getText().toString(),
-                                mEditCalories.getText().toString());
-                        if(isInsterted == true) {
-                            Toast.makeText(InputMealActivity.this,
-                                    "Meal Inserted!", Toast.LENGTH_SHORT).show();
-                        }
-                        else {
-                            Toast.makeText(InputMealActivity.this,
-                                    "WARNING! Meal Not Inserted", Toast.LENGTH_LONG).show();
-                        }
+                        mFoodTrackerDatabase.addMeals(meal);
                     }
                 }
         );
     }
+
+//    public void AddMeal() {
+//        mBtnAddMeal.setOnClickListener(
+//                new View.OnClickListener() {
+//                    @Override
+//                    public void onClick(View view) {
+//                        boolean isInsterted = mFoodTrackerDatabase.insertData(
+//                                mEditName.getText().toString(), mEditType.getText().toString(),
+//                                mEditCalories.getText().toString());
+//                        if(isInsterted == true) {
+//                            Toast.makeText(InputMealActivity.this,
+//                                    "Meal Inserted!", Toast.LENGTH_SHORT).show();
+//                        }
+//                        else {
+//                            Toast.makeText(InputMealActivity.this,
+//                                    "WARNING! Meal Not Inserted", Toast.LENGTH_LONG).show();
+//                        }
+//                    }
+//                }
+//        );
+//    }
 
 //    public void updateLastMeal() {
 //        mBtnEditMeal.setOnClickListener(
