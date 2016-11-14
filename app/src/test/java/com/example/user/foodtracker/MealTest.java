@@ -28,7 +28,7 @@ public class MealTest {
 
     @Test
     public void testGetMealName() {
-        assertEquals("Rice, Beans & Banana", meal.getName());
+        assertEquals("Fish & Chips", meal.getName());
     }
 
     @Test

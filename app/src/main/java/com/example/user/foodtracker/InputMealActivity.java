@@ -2,6 +2,7 @@ package com.example.user.foodtracker;
 
 import android.content.Intent;
 import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -19,6 +20,7 @@ public class InputMealActivity extends AppCompatActivity {
     FoodTrackerDatabase mFoodTrackerDatabase;
     EditText mEditName, mEditType, mEditCalories;
     Button mBtnAddMeal;
+//    mBtnEditMeal;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +33,9 @@ public class InputMealActivity extends AppCompatActivity {
         mEditType = (EditText)findViewById(R.id.text_to_save_type);
         mEditCalories = (EditText)findViewById(R.id.text_to_save_calories);
         mBtnAddMeal = (Button)findViewById(R.id.button_input_meal);
+//        mBtnEditMeal = (Button)findViewById(R.id.button_edit_meal);
         AddMeal();
+//        updateLastMeal();
     }
 
     public void AddMeal() {
@@ -54,5 +58,27 @@ public class InputMealActivity extends AppCompatActivity {
                 }
         );
     }
+
+//    public void updateLastMeal() {
+//        mBtnEditMeal.setOnClickListener(
+//                new View.OnClickListener() {
+//                    @Override
+//                    public void onClick(View view) {
+//                        boolean lastMealUpdated = mFoodTrackerDatabase.updateLastMeal(
+//                                mEditName.getText().toString(), mEditType.getText().toString(),
+//                                mEditCalories.getText().toString());
+//                        if(lastMealUpdated == true) {
+//                            Toast.makeText(InputMealActivity.this,
+//                                    "Meal Updated!", Toast.LENGTH_SHORT).show();
+//                        }
+//                        else {
+//                            Toast.makeText(InputMealActivity.this,
+//                                    "WARNING! Meal Not Updated", Toast.LENGTH_LONG).show();
+//                        }
+//                    }
+//
+//                }
+//        );
+//    }
 
 }

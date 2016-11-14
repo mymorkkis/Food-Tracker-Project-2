@@ -53,8 +53,20 @@ public class FoodTrackerDatabase extends SQLiteOpenHelper {
 
     public Cursor getAllData() {
         SQLiteDatabase mMyDatabase = this.getReadableDatabase();
-        Cursor result = mMyDatabase.rawQuery("SELECT * FROM " + TABLE_NAME, null);
+        Cursor result = mMyDatabase.rawQuery("SELECT * FROM " + TABLE_NAME +
+                " ORDER BY ID DESC", null);
         return result;
     }
+
+//    public boolean updateLastMeal(String id, String name, String type, String calories) {
+//        SQLiteDatabase foodTrackerDatabase = this.getWritableDatabase();
+//        ContentValues contentValues = new ContentValues();
+//        contentValues.put(COL_1, id);
+//        contentValues.put(COL_2, name);
+//        contentValues.put(COL_3, type);
+//        contentValues.put(COL_4, calories);
+//        foodTrackerDatabase.update(TABLE_NAME, contentValues, "ID = (SELECT MAX(ID)", new String[]{id});
+//        return true;
+//    }
 
 }

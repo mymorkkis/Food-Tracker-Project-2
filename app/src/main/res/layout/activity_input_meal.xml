@@ -45,8 +45,16 @@
 
     <Button
         android:text="Input Meal"
+        android:layout_marginTop="30dp"
         android:layout_width="152dp"
         android:layout_height="wrap_content"
         android:id="@+id/button_input_meal"/>
+
+    <Button
+        android:text="Edit Last Meal"
+        android:layout_marginTop="30dp"
+        android:layout_width="152dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/button_edit_meal"/>
 
 </LinearLayout>
