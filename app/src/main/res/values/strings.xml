@@ -1,6 +1,9 @@
 <resources>
     <string name="app_name">FoodTracker</string>
-    <string name="input_meal_activity_title">Meal Input Page</string>
+    <!--<string name="input_meal_activity_title">Meal Input Page</string>-->
     <string name="take_to_meal_activity">Input Meal</string>
+    <!--<string name="view_meal_activity_title">Previous Meals</string>-->
     <string name="take_to_view_meals_activity">Meal History</string>
+    <string name="take_to_edit_meals_activity">Edit Meal</string>
+    <!--<string name="take_to_delete_meals_activity">Delete Meal</string>-->
 </resources>

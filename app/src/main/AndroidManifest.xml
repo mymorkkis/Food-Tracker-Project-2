@@ -21,13 +21,19 @@
 
         <activity
             android:name=".InputMealActivity"
-            android:label="@string/input_meal_activity_title"
+            android:label="@string/take_to_meal_activity"
             android:parentActivityName=".FoodTracker">
         </activity>
 
         <activity
             android:name=".ViewMealsActivity"
             android:label="@string/take_to_view_meals_activity"
+            android:parentActivityName=".FoodTracker">
+        </activity>
+
+        <activity
+            android:name=".EditMealsActivity"
+            android:label="@string/take_to_edit_meals_activity"
             android:parentActivityName=".FoodTracker">
         </activity>
 

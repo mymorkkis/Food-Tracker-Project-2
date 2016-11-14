@@ -32,7 +32,7 @@ public class FoodTrackerDatabase extends SQLiteOpenHelper {
     }
 
     @Override
-    public void onUpgrade(SQLiteDatabase myDatabase, int i, int i1) {
+    public void onUpgrade(SQLiteDatabase myDatabase, int oldVersion, int newVersion) {
         myDatabase.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME);
         onCreate(myDatabase);
     }

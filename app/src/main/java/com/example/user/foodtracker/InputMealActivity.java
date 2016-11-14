@@ -44,10 +44,11 @@ public class InputMealActivity extends AppCompatActivity {
                                 mEditCalories.getText().toString());
                         if(isInsterted == true) {
                             Toast.makeText(InputMealActivity.this,
-                                    "Meal Inserted!", Toast.LENGTH_SHORT).show(); }
+                                    "Meal Inserted!", Toast.LENGTH_SHORT).show();
+                        }
                         else {
                             Toast.makeText(InputMealActivity.this,
-                                    "WARNING Meal Not Inserted", Toast.LENGTH_LONG).show();
+                                    "WARNING! Meal Not Inserted", Toast.LENGTH_LONG).show();
                         }
                     }
                 }
