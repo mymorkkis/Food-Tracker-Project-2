@@ -6,4 +6,5 @@
     <string name="take_to_view_meals_activity">Meal History</string>
     <string name="take_to_edit_meals_activity">Edit Meal</string>
     <!--<string name="take_to_delete_meals_activity">Delete Meal</string>-->
+    <string name="take_to_delete_meals_activity">Delete Meal</string>
 </resources>

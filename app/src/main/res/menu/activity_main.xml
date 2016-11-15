@@ -6,4 +6,6 @@
         android:title="@string/take_to_view_meals_activity"/>
     <item android:id="@+id/action_edit_meals_link"
         android:title="@string/take_to_edit_meals_activity"/>
+    <item android:id="@+id/action_delete_meals_link"
+        android:title="@string/take_to_delete_meals_activity"/>
 </menu>

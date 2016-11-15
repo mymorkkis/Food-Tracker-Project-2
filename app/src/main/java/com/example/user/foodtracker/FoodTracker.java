@@ -36,6 +36,11 @@ public class FoodTracker extends AppCompatActivity {
             startActivity(intentEdit);
             return true;
         }
+        if (item.getItemId() == R.id.action_delete_meals_link) {
+            Intent intentEdit = new Intent(FoodTracker.this, DeleteMealsActivity.class);
+            startActivity(intentEdit);
+            return true;
+        }
         return super.onOptionsItemSelected(item);
     }
 }

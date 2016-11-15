@@ -37,6 +37,12 @@
             android:parentActivityName=".FoodTracker">
         </activity>
 
+        <activity
+            android:name=".DeleteMealsActivity"
+            android:label="@string/take_to_delete_meals_activity"
+            android:parentActivityName=".FoodTracker">
+        </activity>
+
     </application>
 
 </manifest>

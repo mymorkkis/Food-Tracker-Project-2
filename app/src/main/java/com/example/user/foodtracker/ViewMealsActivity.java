@@ -25,7 +25,6 @@ public class ViewMealsActivity extends AppCompatActivity {
         mFoodTrackerDatabase = new FoodTrackerDatabase(this);
 
         mBtnViewAllMeals = (Button)findViewById(R.id.button_view_meals);
-//        viewAllMeals();
 
         mBtnViewAllMeals.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -33,16 +32,9 @@ public class ViewMealsActivity extends AppCompatActivity {
                 ArrayList<Meal> results = mFoodTrackerDatabase.getAllMeals();
                 StringBuffer buffer = new StringBuffer();
                 for (Meal result : results) {
-//                        if (result.getCount() == 0) {
-//                            showMessage("ERROR", "No Data Found");
-//                            return;
-//                        }
-
-//                        while (result.moveToNext()) {
                             buffer.append("Name :" + result.getName() + "\n");
                             buffer.append("Type :" + result.getType() + "\n");
                             buffer.append("Calories :" + result.getCalories() + "\n\n");
-
                         }
                         showMessage("Previous Meals", buffer.toString());
             }
