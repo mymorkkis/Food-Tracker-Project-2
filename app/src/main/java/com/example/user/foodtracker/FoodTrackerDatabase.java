@@ -58,7 +58,7 @@ public class FoodTrackerDatabase extends SQLiteOpenHelper {
         db.close();
     }
 
-    public Meal getMeals(int id){
+    public Meal getMeal(int id){
 
         SQLiteDatabase db = this.getReadableDatabase();
 
@@ -90,7 +90,7 @@ public class FoodTrackerDatabase extends SQLiteOpenHelper {
                 meal.setId(Integer.parseInt(cursor.getString(0)));
                 meal.setName(cursor.getString(1));
                 meal.setType(cursor.getString(2));
-                meal.setCalories(Integer.parseInt(cursor.getString(2)));
+                meal.setCalories(Integer.parseInt(cursor.getString(3)));
 
                 allMeals.add(meal);
             } while (cursor.moveToNext());

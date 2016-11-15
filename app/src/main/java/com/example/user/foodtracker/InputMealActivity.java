@@ -42,6 +42,10 @@ public class InputMealActivity extends AppCompatActivity {
             int calories = Integer.parseInt( mEditCalories.getText().toString());
             meal = new Meal(mEditName.getText().toString(), mEditType.getText().toString(), calories);
             mFoodTrackerDatabase.addMeal(meal);
+            Toast.makeText(InputMealActivity.this,
+                    "Meal Inserted!", Toast.LENGTH_LONG).show();
+            Intent intentInput = new Intent(InputMealActivity.this, InputMealActivity.class);
+            startActivity(intentInput);
         }
     });
 
