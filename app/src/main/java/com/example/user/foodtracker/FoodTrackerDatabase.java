@@ -128,7 +128,6 @@ public class FoodTrackerDatabase extends SQLiteOpenHelper {
     public void deleteAllMeals() {
         SQLiteDatabase db = this.getReadableDatabase();
         db.delete(TABLE_NAME, null, null);
-        db.execSQL("DELETE * FROM " + TABLE_NAME);
         db.close();
     }
 
