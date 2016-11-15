@@ -118,6 +118,20 @@ public class FoodTrackerDatabase extends SQLiteOpenHelper {
                 new String[] {String.valueOf(meal.getId())});
     }
 
+    public void deleteMeal(Meal meal) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.delete(TABLE_NAME, KEY_ID + " = ?",
+                new String[] { String.valueOf(meal.getId())});
+        db.close();
+    }
+
+    public void deleteAllMeals() {
+        SQLiteDatabase db = this.getReadableDatabase();
+        db.delete(TABLE_NAME, null, null);
+        db.execSQL("DELETE * FROM " + TABLE_NAME);
+        db.close();
+    }
+
 //    public static final String DATABASE_NAME = "food_tracker.db";
 //    public static final String TABLE_NAME = "meals";
 //    public static final String COL_1 = "ID";
