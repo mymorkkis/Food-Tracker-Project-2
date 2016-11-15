@@ -5,7 +5,7 @@
     android:weightSum="1">
 
     <TextView
-        android:text="Meal Name: "
+        android:text="Meal: "
         android:textSize="35dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -18,17 +18,11 @@
         android:id="@+id/text_to_save_name"/>
 
     <TextView
-        android:text="Meal Type: "
+        android:text="Type: "
         android:textSize="35dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/textViewType"/>
-
-    <!--<EditText-->
-        <!--android:textSize="25dp"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:id="@+id/text_to_save_type"/>-->
 
     <Spinner
         android:id="@+id/spinner_meal_type"

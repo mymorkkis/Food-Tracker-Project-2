@@ -179,14 +179,14 @@ public class FoodTrackerDatabase extends SQLiteOpenHelper {
         db.close();
     }
 
-
-////    public Cursor getTotalCalories() {
-////        SQLiteDatabase mMyDatabase = this.getReadableDatabase();
-////        Cursor resultCalories = mMyDatabase.rawQuery("SELECT SUM(CALORIES) FROM " + TABLE_NAME,
-////                null);
-////        return resultCalories;
-////    }
 //
+//    public Cursor getTotalCalories() {
+//        SQLiteDatabase mMyDatabase = this.getReadableDatabase();
+//        Cursor resultCalories = mMyDatabase.rawQuery("SELECT SUM(CALORIES) FROM " + TABLE_NAME,
+//                null);
+//        return resultCalories;
+//    }
+
 ////    public boolean updateLastMeal(String id, String name, String type, String calories) {
 ////        SQLiteDatabase foodTrackerDatabase = this.getWritableDatabase();
 ////        ContentValues contentValues = new ContentValues();
