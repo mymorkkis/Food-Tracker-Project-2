@@ -6,6 +6,7 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -16,7 +17,7 @@ import java.util.ArrayList;
 public class ViewMealsActivity extends AppCompatActivity {
 
     FoodTrackerDatabase mFoodTrackerDatabase;
-    Button mBtnViewAllMeals;
+    Button mBtnViewAllMeals, mBtnCountMeals;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +26,7 @@ public class ViewMealsActivity extends AppCompatActivity {
         mFoodTrackerDatabase = new FoodTrackerDatabase(this);
 
         mBtnViewAllMeals = (Button)findViewById(R.id.button_view_meals);
+
 
         mBtnViewAllMeals.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -39,6 +41,17 @@ public class ViewMealsActivity extends AppCompatActivity {
                         showMessage("Previous Meals", buffer.toString());
             }
         });
+
+        mBtnCountMeals = (Button)findViewById(R.id.button_count_meals);
+
+        mBtnCountMeals.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                int count = mFoodTrackerDatabase.countAllMeals();
+                Toast.makeText(ViewMealsActivity.this,
+                       "You've eaten " + count + " meals!", Toast.LENGTH_LONG).show();
+            }
+        });
     }
 
     public void showMessage(String title, String message) {
@@ -51,7 +64,7 @@ public class ViewMealsActivity extends AppCompatActivity {
 
 
 
-//    public void viewAllMeals() {
+    //    public void viewAllMeals() {
 //        mBtnViewAllMeals.setOnClickListener(
 //                new View.OnClickListener() {
 //                    @Override
