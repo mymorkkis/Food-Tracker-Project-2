@@ -23,8 +23,8 @@ public class InputMealActivity extends AppCompatActivity {
     Meal meal;
     EditText mEditName, mEditType, mEditCalories;
     Spinner mSpinnerType;
-    Button mBtnAddMeal;
-//    int calories;
+    Button mBtnAddMeal, mBtnEditLastMeal;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,97 +33,47 @@ public class InputMealActivity extends AppCompatActivity {
         mFoodTrackerDatabase = new FoodTrackerDatabase(this);
 
         //casting
-        mEditName = (EditText)findViewById(R.id.text_to_save_name);
+        mEditName = (EditText) findViewById(R.id.text_to_save_name);
 //        mEditType = (EditText)findViewById(R.id.text_to_save_type);
-        mSpinnerType = (Spinner)findViewById(R.id.spinner_meal_type);
-        mEditCalories = (EditText)findViewById(R.id.text_to_save_calories);
-        mBtnAddMeal = (Button)findViewById(R.id.button_input_meal);
+        mSpinnerType = (Spinner) findViewById(R.id.spinner_meal_type);
+        mEditCalories = (EditText) findViewById(R.id.text_to_save_calories);
+        mBtnAddMeal = (Button) findViewById(R.id.button_input_meal);
+        mBtnEditLastMeal = (Button) findViewById(R.id.button_edit_meal);
 
-        String[] mealTypes = new String[] {"Breakfast", "Lunch", "Dinner", "Snack", "Drink"};
+        String[] mealTypes = new String[]{"Breakfast", "Lunch", "Dinner", "Snack", "Drink"};
         ArrayAdapter<String> adapter = new ArrayAdapter<>(
                 this, android.R.layout.simple_spinner_dropdown_item, mealTypes);
         mSpinnerType.setAdapter(adapter);
 
-
         mBtnAddMeal.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View view){
-            String choice = mSpinnerType.getSelectedItem().toString();
-            int calories = Integer.parseInt( mEditCalories.getText().toString());
-            meal = new Meal(mEditName.getText().toString(), choice, calories);
-            mFoodTrackerDatabase.addMeal(meal);
-            Toast.makeText(InputMealActivity.this,
-                    "Meal Inserted!", Toast.LENGTH_SHORT).show();
-            Intent intentInput = new Intent(InputMealActivity.this, InputMealActivity.class);
-            startActivity(intentInput);
-        }
-    });
+            @Override
+            public void onClick(View view) {
+                String choice = mSpinnerType.getSelectedItem().toString();
+                int calories = Integer.parseInt(mEditCalories.getText().toString());
+                meal = new Meal(mEditName.getText().toString(), choice, calories);
+                boolean isInsterted = mFoodTrackerDatabase.addMeal(meal);
+                if(isInsterted == true) {
+                    Toast.makeText(InputMealActivity.this,
+                            "Meal Inserted!", Toast.LENGTH_SHORT).show();
+                    Intent intentInput = new Intent(InputMealActivity.this, InputMealActivity.class);
+                    startActivity(intentInput);
+                }
+                else {
+                    Toast.makeText(InputMealActivity.this,
+                            "WARNING! Meal Not Inserted", Toast.LENGTH_LONG).show();
+                }
+            }
+        });
 
-//        mBtnEditMeal = (Button)findViewById(R.id.button_edit_meal);
-//        addMeal();
-//        updateLastMeal();
-
+//        mBtnEditLastMeal.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Meal lastMeal = mFoodTrackerDatabase.getLatestEntry();
+//                mEditName.setText(lastMeal.getName());
+//                mEditCalories.setText(lastMeal.getCalories());
+//            }
+//        });
 
     }
-
-
-
-
-
-
-
-//    public void addMeal() {
-//        mBtnAddMeal.setOnClickListener(
-//                new View.OnClickListener() {
-//                    @Override
-//                    public void onClick(View view) {
-////                        mFoodTrackerDatabase.addMeals(meal);
-//                    }
-//                }
-//        );
-//    }
-
-//    public void AddMeal() {
-//        mBtnAddMeal.setOnClickListener(
-//                new View.OnClickListener() {
-//                    @Override
-//                    public void onClick(View view) {
-//                        boolean isInsterted = mFoodTrackerDatabase.insertData(
-//                                mEditName.getText().toString(), mEditType.getText().toString(),
-//                                mEditCalories.getText().toString());
-//                        if(isInsterted == true) {
-//                            Toast.makeText(InputMealActivity.this,
-//                                    "Meal Inserted!", Toast.LENGTH_SHORT).show();
-//                        }
-//                        else {
-//                            Toast.makeText(InputMealActivity.this,
-//                                    "WARNING! Meal Not Inserted", Toast.LENGTH_LONG).show();
-//                        }
-//                    }
-//                }
-//        );
-//    }
-
-//    public void updateLastMeal() {
-//        mBtnEditMeal.setOnClickListener(
-//                new View.OnClickListener() {
-//                    @Override
-//                    public void onClick(View view) {
-//                        boolean lastMealUpdated = mFoodTrackerDatabase.updateLastMeal(
-//                                mEditName.getText().toString(), mEditType.getText().toString(),
-//                                mEditCalories.getText().toString());
-//                        if(lastMealUpdated == true) {
-//                            Toast.makeText(InputMealActivity.this,
-//                                    "Meal Updated!", Toast.LENGTH_SHORT).show();
-//                        }
-//                        else {
-//                            Toast.makeText(InputMealActivity.this,
-//                                    "WARNING! Meal Not Updated", Toast.LENGTH_LONG).show();
-//                        }
-//                    }
-//
-//                }
-//        );
-//    }
 
 }

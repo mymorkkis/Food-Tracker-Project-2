@@ -37,7 +37,7 @@ public class FoodTrackerDatabase extends SQLiteOpenHelper {
 
         db.execSQL(CREATE_MEALS_TABLE);
     }
-//check this later
+
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL("DROP TABLE IF EXISTS meals");
@@ -45,7 +45,20 @@ public class FoodTrackerDatabase extends SQLiteOpenHelper {
         this.onCreate(db);
     }
 
-    public void addMeal(Meal meal){
+//    public void addMeal(Meal meal){
+//        SQLiteDatabase db = this.getWritableDatabase();
+//
+//        ContentValues values = new ContentValues();
+//        values.put(KEY_NAME, meal.getName());
+//        values.put(KEY_TYPE, meal.getType());
+//        values.put(KEY_CALORIES, meal.getCalories());
+//
+//        db.insert(TABLE_NAME, null, values);
+//
+//        db.close();
+//    }
+
+    public boolean addMeal(Meal meal){
         SQLiteDatabase db = this.getWritableDatabase();
 
         ContentValues values = new ContentValues();
@@ -53,10 +66,45 @@ public class FoodTrackerDatabase extends SQLiteOpenHelper {
         values.put(KEY_TYPE, meal.getType());
         values.put(KEY_CALORIES, meal.getCalories());
 
-        db.insert(TABLE_NAME, null, values);
+        long result = db.insert(TABLE_NAME, null, values);
 
-        db.close();
+        if (result == -1) {
+            return false;
+        } else {
+            return true;
+        }
     }
+
+//    public boolean insertData(String name, String type, String calories) {
+//        SQLiteDatabase mMyDatabase = this.getReadableDatabase();
+//        ContentValues contentValues = new ContentValues();
+//        contentValues.put(COL_2, name);
+//        contentValues.put(COL_3, type);
+//        contentValues.put(COL_4, calories);
+//        long result = mMyDatabase.insert(TABLE_NAME, null, contentValues);
+//        if (result == -1) {
+//            return false;
+//        } else {
+//            return true;
+//
+//        }
+//    }
+
+//    public Meal getLatestEntry() {
+//        String query = "SELECT * FROM " + TABLE_NAME + " WHERE id = MAX(id)";
+//
+//        SQLiteDatabase db = this.getWritableDatabase();
+//        Cursor cursor = db.rawQuery(query, null);
+//
+//        Meal meal = null;
+//        meal = new Meal();
+//        meal.setId(Integer.parseInt(cursor.getString(0)));
+//        meal.setName(cursor.getString(1));
+//        meal.setType(cursor.getString(2));
+//        meal.setCalories(Integer.parseInt(cursor.getString(3)));
+//
+//        return meal;
+//    }
 
     public Meal getMeal(int id){
 
@@ -131,46 +179,8 @@ public class FoodTrackerDatabase extends SQLiteOpenHelper {
         db.close();
     }
 
-//    public static final String DATABASE_NAME = "food_tracker.db";
-//    public static final String TABLE_NAME = "meals";
-//    public static final String COL_1 = "ID";
-//    public static final String COL_2 = "NAME";
-//    public static final String COL_3 = "TYPE";
-//    public static final String COL_4 = "CALORIES";
-//
-//
-//
-//    public FoodTrackerDatabase(Context context) {
-//        super(context, DATABASE_NAME, null, 1);
-//    }
-//
-//    @Override
-//    public void onCreate(SQLiteDatabase myDatabase) {
-//        myDatabase.execSQL("create table " + TABLE_NAME +
-//                "(ID INTEGER PRIMARY KEY AUTOINCREMENT, NAME TEXT, TYPE TEXT, CALORIES INTEGER)" );
-//    }
-//
-//    @Override
-//    public void onUpgrade(SQLiteDatabase myDatabase, int oldVersion, int newVersion) {
-//        myDatabase.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME);
-//        onCreate(myDatabase);
-//    }
-//
-//    public boolean insertData(String name, String type, String calories) {
-//        SQLiteDatabase mMyDatabase = this.getReadableDatabase();
-//        ContentValues contentValues = new ContentValues();
-//        contentValues.put(COL_2, name);
-//        contentValues.put(COL_3, type);
-//        contentValues.put(COL_4, calories);
-//        long result = mMyDatabase.insert(TABLE_NAME, null, contentValues);
-//        if (result == -1) {
-//            return false;
-//        } else {
-//            return true;
-//
-//        }
-//    }
-//
+
+
 //    public Cursor getAllData() {
 //        SQLiteDatabase mMyDatabase = this.getReadableDatabase();
 //        Cursor result = mMyDatabase.rawQuery("SELECT * FROM " + TABLE_NAME +
