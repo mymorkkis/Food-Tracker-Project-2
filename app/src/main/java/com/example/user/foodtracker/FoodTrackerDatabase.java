@@ -107,7 +107,16 @@ public class FoodTrackerDatabase extends SQLiteOpenHelper {
         return cursor.getCount();
     }
 
+    public int updateMeal(Meal meal) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(KEY_NAME, meal.getName());
+        values.put(KEY_TYPE, meal.getType());
+        values.put(KEY_CALORIES, meal.getCalories());
 
+        return db.update(TABLE_NAME, values, KEY_ID + " = ?",
+                new String[] {String.valueOf(meal.getId())});
+    }
 
 //    public static final String DATABASE_NAME = "food_tracker.db";
 //    public static final String TABLE_NAME = "meals";
