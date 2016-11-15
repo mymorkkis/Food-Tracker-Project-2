@@ -49,12 +49,12 @@ public class ViewMealsActivity extends AppCompatActivity {
 //        );
 //    }
 
-    public void showMessage(String title, String message) {
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setCancelable(true);
-        builder.setTitle(title);
-        builder.setMessage(message);
-        builder.show();
-    }
+//    public void showMessage(String title, String message) {
+//        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+//        builder.setCancelable(true);
+//        builder.setTitle(title);
+//        builder.setMessage(message);
+//        builder.show();
+//    }
 
 }

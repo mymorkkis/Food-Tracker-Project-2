@@ -37,7 +37,7 @@ public class FoodTrackerDatabase extends SQLiteOpenHelper {
 
         db.execSQL(CREATE_MEALS_TABLE);
     }
-
+//check this later
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL("DROP TABLE IF EXISTS meals");
@@ -45,7 +45,7 @@ public class FoodTrackerDatabase extends SQLiteOpenHelper {
         this.onCreate(db);
     }
 
-    public void addMeals(Meal meal){
+    public void addMeal(Meal meal){
         SQLiteDatabase db = this.getWritableDatabase();
 
         ContentValues values = new ContentValues();
@@ -69,11 +69,8 @@ public class FoodTrackerDatabase extends SQLiteOpenHelper {
         if (cursor != null)
             cursor.moveToFirst();
 
-        Meal meal = new Meal();
-        meal.setId(Integer.parseInt(cursor.getString(0)));
-        meal.setName(cursor.getString(1));
-        meal.setType(cursor.getString(2));
-        meal.setCalories(Integer.parseInt(cursor.getString(3)));
+        Meal meal = new Meal((Integer.parseInt(cursor.getString(0))),
+                cursor.getString(0), cursor.getString(2), (Integer.parseInt(cursor.getString(3))));
 
         return meal;
     }
@@ -164,7 +161,7 @@ public class FoodTrackerDatabase extends SQLiteOpenHelper {
 ////        contentValues.put(COL_2, name);
 ////        contentValues.put(COL_3, type);
 ////        contentValues.put(COL_4, calories);
-////        foodTrackerDatabase.update(TABLE_NAME, contentValues, "ID = (SELECT MAX(ID)", new String[]{id});
+////        foodTrackerDatabase.update(TABLE_NAME, contentValues, "ID = (SELECT MAX(ID))", new String[]{id});
 ////        return true;
 ////    }
 

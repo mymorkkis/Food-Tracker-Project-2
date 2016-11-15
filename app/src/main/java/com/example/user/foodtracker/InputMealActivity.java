@@ -21,37 +21,53 @@ public class InputMealActivity extends AppCompatActivity {
     Meal meal;
     EditText mEditName, mEditType, mEditCalories;
     Button mBtnAddMeal;
+//    int calories;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_input_meal);
         mFoodTrackerDatabase = new FoodTrackerDatabase(this);
-        meal = new Meal();
-
 
         //casting
         mEditName = (EditText)findViewById(R.id.text_to_save_name);
         mEditType = (EditText)findViewById(R.id.text_to_save_type);
         mEditCalories = (EditText)findViewById(R.id.text_to_save_calories);
         mBtnAddMeal = (Button)findViewById(R.id.button_input_meal);
-//        meal = new Meal(mEditName.getText().toString(), mEditType.getText().toString(), mEditCalories.getText().toString());
+
+
+      mBtnAddMeal.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View view){
+            int calories = Integer.parseInt( mEditCalories.getText().toString());
+            meal = new Meal(mEditName.getText().toString(), mEditType.getText().toString(), calories);
+            mFoodTrackerDatabase.addMeal(meal);
+        }
+    });
 
 //        mBtnEditMeal = (Button)findViewById(R.id.button_edit_meal);
-        AddMeal();
+//        addMeal();
 //        updateLastMeal();
+
+
     }
 
-    public void AddMeal() {
-        mBtnAddMeal.setOnClickListener(
-                new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        mFoodTrackerDatabase.addMeals(meal);
-                    }
-                }
-        );
-    }
+
+
+
+
+
+
+//    public void addMeal() {
+//        mBtnAddMeal.setOnClickListener(
+//                new View.OnClickListener() {
+//                    @Override
+//                    public void onClick(View view) {
+////                        mFoodTrackerDatabase.addMeals(meal);
+//                    }
+//                }
+//        );
+//    }
 
 //    public void AddMeal() {
 //        mBtnAddMeal.setOnClickListener(

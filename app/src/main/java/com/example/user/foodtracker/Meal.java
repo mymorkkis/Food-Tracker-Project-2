@@ -1,4 +1,3 @@
-//package com.example.user.foodtracker;
 //
 //
 //import java.lang.reflect.Array;
@@ -68,12 +67,32 @@ public class Meal {
     private String mType;
     private int mCalories;
 
-//    public Meal(String mName, String mType, int mCalories) {
+//    public Meal(int id, String name, String type, int calories) {
 //        super();
-//        this.mName = mName;
-//        this.mType = mType;
-//        this.mCalories = mCalories;
+//        this.mId = id;
+//        this.mName = name;
+//        this.mType = type;
+//        this.mCalories = calories;
 //    }
+
+    public Meal() {
+
+    }
+
+    public Meal(int id, String name, String type, int calories) {
+//        super();
+        this.mId = id;
+        this.mName = name;
+        this.mType = type;
+        this.mCalories = calories;
+    }
+
+    public Meal(String name, String type, int calories) {
+//        super();
+        this.mName = name;
+        this.mType = type;
+        this.mCalories = calories;
+    }
 
     public void setId(int id) {
         this.mId = id;
