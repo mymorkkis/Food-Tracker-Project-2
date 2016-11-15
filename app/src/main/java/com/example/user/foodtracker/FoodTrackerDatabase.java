@@ -78,7 +78,7 @@ public class FoodTrackerDatabase extends SQLiteOpenHelper {
     public ArrayList<Meal> getAllMeals() {
         ArrayList<Meal> allMeals = new ArrayList<>();
 
-        String query = "SELECT  * FROM " + TABLE_NAME;
+        String query = "SELECT  * FROM " + TABLE_NAME + " ORDER BY ID DESC";
 
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor cursor = db.rawQuery(query, null);
@@ -96,6 +96,15 @@ public class FoodTrackerDatabase extends SQLiteOpenHelper {
             } while (cursor.moveToNext());
         }
         return allMeals;
+    }
+
+    public int countAllMeals() {
+        String countQuery = "SELECT * FROM " + TABLE_NAME;
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery(countQuery, null);
+        cursor.close();
+
+        return cursor.getCount();
     }
 
 
