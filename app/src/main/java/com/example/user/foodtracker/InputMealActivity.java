@@ -1,11 +1,11 @@
 package com.example.user.foodtracker;
 
 import android.content.Intent;
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -21,10 +21,41 @@ public class InputMealActivity extends AppCompatActivity {
 
     FoodTrackerDatabase mFoodTrackerDatabase;
     Meal meal;
-    EditText mEditName, mEditType, mEditCalories;
+    EditText mEditName, mEditCalories;
     Spinner mSpinnerType;
     Button mBtnAddMeal, mBtnEditLastMeal;
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater menuInflater = getMenuInflater();
+        menuInflater.inflate(R.menu.activity_main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == R.id.action_input_meal_link) {
+            Intent intentInput = new Intent(InputMealActivity.this, InputMealActivity.class);
+            startActivity(intentInput);
+            return true;
+        }
+        if (item.getItemId() == R.id.action_view_meals_link) {
+            Intent intentShow = new Intent(InputMealActivity.this, ViewMealsActivity.class);
+            startActivity(intentShow);
+            return true;
+        }
+        if (item.getItemId() == R.id.action_edit_meals_link) {
+            Intent intentEdit = new Intent(InputMealActivity.this, EditMealsActivity.class);
+            startActivity(intentEdit);
+            return true;
+        }
+        if (item.getItemId() == R.id.action_delete_meals_link) {
+            Intent intentEdit = new Intent(InputMealActivity.this, DeleteMealsActivity.class);
+            startActivity(intentEdit);
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,9 +63,7 @@ public class InputMealActivity extends AppCompatActivity {
         setContentView(R.layout.activity_input_meal);
         mFoodTrackerDatabase = new FoodTrackerDatabase(this);
 
-        //casting
         mEditName = (EditText) findViewById(R.id.text_to_save_name);
-//        mEditType = (EditText)findViewById(R.id.text_to_save_type);
         mSpinnerType = (Spinner) findViewById(R.id.spinner_meal_type);
         mEditCalories = (EditText) findViewById(R.id.text_to_save_calories);
         mBtnAddMeal = (Button) findViewById(R.id.button_input_meal);

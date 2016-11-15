@@ -180,14 +180,6 @@ public class FoodTrackerDatabase extends SQLiteOpenHelper {
     }
 
 
-
-//    public Cursor getAllData() {
-//        SQLiteDatabase mMyDatabase = this.getReadableDatabase();
-//        Cursor result = mMyDatabase.rawQuery("SELECT * FROM " + TABLE_NAME +
-//                " ORDER BY ID DESC", null);
-//        return result;
-//    }
-//
 ////    public Cursor getTotalCalories() {
 ////        SQLiteDatabase mMyDatabase = this.getReadableDatabase();
 ////        Cursor resultCalories = mMyDatabase.rawQuery("SELECT SUM(CALORIES) FROM " + TABLE_NAME,

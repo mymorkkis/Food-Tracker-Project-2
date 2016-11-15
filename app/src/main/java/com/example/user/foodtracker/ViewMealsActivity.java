@@ -1,9 +1,12 @@
 package com.example.user.foodtracker;
 
-import android.database.Cursor;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -18,6 +21,38 @@ public class ViewMealsActivity extends AppCompatActivity {
 
     FoodTrackerDatabase mFoodTrackerDatabase;
     Button mBtnViewAllMeals, mBtnCountMeals;
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater menuInflater = getMenuInflater();
+        menuInflater.inflate(R.menu.activity_main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == R.id.action_input_meal_link) {
+            Intent intentInput = new Intent(ViewMealsActivity.this, InputMealActivity.class);
+            startActivity(intentInput);
+            return true;
+        }
+        if (item.getItemId() == R.id.action_view_meals_link) {
+            Intent intentShow = new Intent(ViewMealsActivity.this, ViewMealsActivity.class);
+            startActivity(intentShow);
+            return true;
+        }
+        if (item.getItemId() == R.id.action_edit_meals_link) {
+            Intent intentEdit = new Intent(ViewMealsActivity.this, EditMealsActivity.class);
+            startActivity(intentEdit);
+            return true;
+        }
+        if (item.getItemId() == R.id.action_delete_meals_link) {
+            Intent intentEdit = new Intent(ViewMealsActivity.this, DeleteMealsActivity.class);
+            startActivity(intentEdit);
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,32 +96,5 @@ public class ViewMealsActivity extends AppCompatActivity {
         builder.setMessage(message);
         builder.show();
     }
-
-
-
-    //    public void viewAllMeals() {
-//        mBtnViewAllMeals.setOnClickListener(
-//                new View.OnClickListener() {
-//                    @Override
-//                    public void onClick(View view) {
-//                        Cursor result = mFoodTrackerDatabase.getMeals();
-//                        if (result.getCount() == 0) {
-//                            showMessage("ERROR", "No Data Found");
-//                            return;
-//                        }
-//                        StringBuffer buffer = new StringBuffer();
-//                        while (result.moveToNext()) {
-//                            buffer.append("Name :" + result.getString(1) + "\n");
-//                            buffer.append("Type :" + result.getString(2) + "\n");
-//                            buffer.append("Calories :" + result.getString(3) + "\n\n");
-//
-//                        }
-//                        showMessage("Previous Meals", buffer.toString());
-//                    }
-//                }
-//        );
-//    }
-
-
 
 }
