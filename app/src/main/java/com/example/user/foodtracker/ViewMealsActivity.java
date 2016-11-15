@@ -34,9 +34,9 @@ public class ViewMealsActivity extends AppCompatActivity {
                 ArrayList<Meal> results = mFoodTrackerDatabase.getAllMeals();
                 StringBuffer buffer = new StringBuffer();
                 for (Meal result : results) {
-                            buffer.append("Name :" + result.getName() + "\n");
-                            buffer.append("Type :" + result.getType() + "\n");
-                            buffer.append("Calories :" + result.getCalories() + "\n\n");
+                            buffer.append("Name: " + result.getName() + "\n");
+                            buffer.append("Type: " + result.getType() + "\n");
+                            buffer.append("Calories: " + result.getCalories() + "\n\n");
                         }
                         showMessage("Previous Meals", buffer.toString());
             }

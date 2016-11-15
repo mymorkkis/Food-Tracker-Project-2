@@ -24,16 +24,23 @@
         android:layout_height="wrap_content"
         android:id="@+id/textViewType"/>
 
-    <EditText
-        android:textSize="25dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/text_to_save_type"/>
+    <!--<EditText-->
+        <!--android:textSize="25dp"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:id="@+id/text_to_save_type"/>-->
+
+    <Spinner
+        android:id="@+id/spinner_meal_type"
+        android:layout_width="match_parent"
+        android:layout_height="83dp"
+        android:background="@android:drawable/btn_dropdown"
+        android:spinnerMode="dropdown"/>
 
     <TextView
         android:text="Total Calories: "
         android:textSize="35dp"
-        android:layout_width="match_parent"
+        android:layout_width="267dp"
         android:layout_height="wrap_content"
         android:id="@+id/textViewCalories"/>
 
