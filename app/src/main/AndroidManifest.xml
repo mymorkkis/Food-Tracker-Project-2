@@ -32,6 +32,12 @@
         </activity>
 
         <activity
+            android:name=".SearchMealsActivity"
+            android:label="@string/take_to_search_meals_activity"
+            android:parentActivityName=".FoodTracker">
+        </activity>
+
+        <activity
             android:name=".EditMealsActivity"
             android:label="@string/take_to_edit_meals_activity"
             android:parentActivityName=".FoodTracker">

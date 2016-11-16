@@ -4,6 +4,8 @@
         android:title="@string/take_to_meal_activity"/>
     <item android:id="@+id/action_view_meals_link"
         android:title="@string/take_to_view_meals_activity"/>
+    <item android:id="@+id/action_search_meals_activity"
+        android:title="@string/take_to_search_meals_activity"/>
     <item android:id="@+id/action_edit_meals_link"
         android:title="@string/take_to_edit_meals_activity"/>
     <item android:id="@+id/action_delete_meals_link"
