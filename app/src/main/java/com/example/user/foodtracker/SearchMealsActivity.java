@@ -63,7 +63,7 @@ public class SearchMealsActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_view_meals);
+        setContentView(R.layout.activity_search_meals);
         mFoodTrackerDatabase = new FoodTrackerDatabase(this);
 
         mListView = (ListView)findViewById(R.id.search_meals);
@@ -80,10 +80,8 @@ public class SearchMealsActivity extends AppCompatActivity {
         ArrayList<String> allItems = new ArrayList<>();
 
         for (Meal meal : allMeals) {
-            allItems.add(meal.getName());
-            allItems.add(meal.getType());
-            String calAsString = String.valueOf(meal.getCalories());
-            allItems.add(calAsString);
+            allItems.add(meal.getName() + " / " + meal.getType() + " / " +
+                    String.valueOf(meal.getCalories()) + " kcal");
         }
         return allItems;
     }
