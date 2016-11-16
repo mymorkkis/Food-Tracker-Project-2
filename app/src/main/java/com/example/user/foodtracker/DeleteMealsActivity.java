@@ -69,7 +69,7 @@ public class DeleteMealsActivity extends AppCompatActivity {
             public void onClick(View view) {
                 mFoodTrackerDatabase.deleteAllMeals();
                 Toast.makeText(DeleteMealsActivity.this,
-                        "All Meals Deleted!", Toast.LENGTH_SHORT).show();
+                        "Today is the first day of the rest of your life!", Toast.LENGTH_LONG).show();
 
                 Intent intentInput = new Intent(DeleteMealsActivity.this, FoodTracker.class);
                 startActivity(intentInput);

@@ -61,9 +61,9 @@ public class Meal {
     }
 
 
-    @Override
-    public String toString() {
-        return "Meals [id=" + mId +", name=" + mName +
-                ", type=" + mType + ", calories=" + mCalories + "]";
-    }
+//    @Override
+//    public String toString() {
+//        return "Meals [id=" + mId +", name=" + mName +
+//                ", type=" + mType + ", calories=" + mCalories + "]";
+//    }
 }
