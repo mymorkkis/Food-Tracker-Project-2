@@ -14,40 +14,30 @@ import static junit.framework.Assert.assertEquals;
 public class MealTest {
 
     Meal meal;
-    Food foodItem;
-    Food foodItem2;
-    Food foodItem3;
 
     @Before
     public void before() {
-        meal = new Meal("Rice, Beans & Banana", MealType.LUNCH);
-        foodItem = new Food("White Rice", 300);
-        foodItem2 = new Food("Black Beans", 450);
-        foodItem3 = new Food("Banana", 175);
+        meal = new Meal("Rice & Beans", "Lunch", 655, "13/07/1999");
     }
 
     @Test
     public void testGetMealName() {
-        assertEquals("Fish & Chips", meal.getName());
+        assertEquals("Rice & Beans", meal.getName());
     }
 
     @Test
     public void testGetMealType() {
-        assertEquals(MealType.LUNCH, meal.getType());
+        assertEquals("Lunch", meal.getType());
     }
 
     @Test
-    public void testFoodInputIntoMeal() {
-        meal.addFoodItem(foodItem);
-        assertEquals(1, meal.foodItemsCount());
+    public void testGetCalories() {
+        assertEquals(655, meal.getCalories());
     }
 
     @Test
     public void testTotalCaloriesForMeal() {
-        meal.addFoodItem(foodItem);
-        meal.addFoodItem(foodItem2);
-        meal.addFoodItem(foodItem3);
-        assertEquals(925, meal.totalMealCalories());
+       assertEquals("13/07/1999", meal.getDate());
     }
 
 }

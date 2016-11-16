@@ -75,7 +75,7 @@ public class FoodTracker extends AppCompatActivity {
             counter += meal.getCalories();
         }
         String calorieTotal = "You have eaten a total of " + String.valueOf(counter)
-                + " calories so far!";
+                + " calories since the dawn of this app!";
         return calorieTotal;
     }
 }

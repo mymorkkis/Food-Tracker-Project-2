@@ -9,4 +9,18 @@
         android:layout_height="wrap_content">
     </ListView>
 
+    <EditText
+        android:textSize="25dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/text_to_search_for_meals"/>
+
+    <Button
+        android:text="Search for Meal"
+        android:layout_marginTop="15dp"
+        android:layout_width="235dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/button_input_meal"
+        android:backgroundTint="@android:color/darker_gray" />
+
 </LinearLayout>

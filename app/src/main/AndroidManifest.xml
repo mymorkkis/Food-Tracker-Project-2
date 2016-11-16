@@ -27,25 +27,25 @@
 
         <activity
             android:name=".ViewMealsActivity"
-            android:label="@string/take_to_view_meals_activity"
+            android:label="@string/view_meal_activity_title"
             android:parentActivityName=".FoodTracker">
         </activity>
 
         <activity
             android:name=".SearchMealsActivity"
-            android:label="@string/take_to_search_meals_activity"
+            android:label="@string/search_meal_activity_title"
             android:parentActivityName=".FoodTracker">
         </activity>
 
         <activity
             android:name=".EditMealsActivity"
-            android:label="@string/take_to_edit_meals_activity"
+            android:label="@string/edit_meal_activity_title"
             android:parentActivityName=".FoodTracker">
         </activity>
 
         <activity
             android:name=".DeleteMealsActivity"
-            android:label="@string/take_to_delete_meals_activity"
+            android:label="@string/delete_all_data_activity_title"
             android:parentActivityName=".FoodTracker">
         </activity>
 

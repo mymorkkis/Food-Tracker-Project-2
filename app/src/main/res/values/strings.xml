@@ -3,10 +3,12 @@
     <string name="input_meal_activity_title">New Meal</string>
     <string name="take_to_meal_activity">Input Meal</string>
     <string name="date_format">dd/mm/yyyy</string>
-    <!--<string name="view_meal_activity_title">Previous Meals</string>-->
+    <string name="view_meal_activity_title">Previous Meals</string>
     <string name="take_to_view_meals_activity">Meal History</string>
-    <string name="take_to_search_meals_activity">Search Meal</string>
+    <string name="search_meal_activity_title">Search Meals</string>
+    <string name="take_to_search_meals_activity">Search Meals</string>
+    <string name="edit_meal_activity_title">Edit Meal</string>
     <string name="take_to_edit_meals_activity">Edit Meal</string>
-    <!--<string name="take_to_delete_meals_activity">Delete Meal</string>-->
-    <string name="take_to_delete_meals_activity">Delete Meal</string>
+    <string name="delete_all_data_activity_title">Delete All Data</string>
+    <string name="take_to_delete_meals_activity">Delete Data</string>
 </resources>

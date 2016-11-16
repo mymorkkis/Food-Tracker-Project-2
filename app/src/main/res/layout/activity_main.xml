@@ -4,10 +4,13 @@
     android:layout_height="match_parent">
 
     <TextView
+        android:layout_marginLeft="55dp"
+        android:layout_marginRight="55dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
         android:text=""
         android:textSize="35dp"
-        android:layout_width="267dp"
-        android:layout_height="wrap_content"
         android:id="@+id/text_show_calories"/>
 
 </LinearLayout>
