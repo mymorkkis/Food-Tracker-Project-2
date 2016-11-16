@@ -44,6 +44,11 @@ public class InputMealActivity extends AppCompatActivity {
             startActivity(intentShow);
             return true;
         }
+        if (item.getItemId() == R.id.action_search_meals_link) {
+            Intent intentShow = new Intent(InputMealActivity.this, SearchMealsActivity.class);
+            startActivity(intentShow);
+            return true;
+        }
         if (item.getItemId() == R.id.action_edit_meals_link) {
             Intent intentEdit = new Intent(InputMealActivity.this, EditMealsActivity.class);
             startActivity(intentEdit);

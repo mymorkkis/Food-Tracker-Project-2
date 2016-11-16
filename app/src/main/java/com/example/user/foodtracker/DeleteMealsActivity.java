@@ -39,6 +39,11 @@ public class DeleteMealsActivity extends AppCompatActivity {
             startActivity(intentShow);
             return true;
         }
+        if (item.getItemId() == R.id.action_search_meals_link) {
+            Intent intentShow = new Intent(DeleteMealsActivity.this, SearchMealsActivity.class);
+            startActivity(intentShow);
+            return true;
+        }
         if (item.getItemId() == R.id.action_edit_meals_link) {
             Intent intentEdit = new Intent(DeleteMealsActivity.this, EditMealsActivity.class);
             startActivity(intentEdit);

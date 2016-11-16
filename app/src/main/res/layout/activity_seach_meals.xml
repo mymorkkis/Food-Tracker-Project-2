@@ -5,7 +5,7 @@
 
 
     <ListView
-        android:id="@id/seach_meals_listview"
+        android:id="@+id/search_meals"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
     </ListView>
