@@ -47,19 +47,6 @@ public class FoodTrackerDatabase extends SQLiteOpenHelper {
         this.onCreate(db);
     }
 
-//    public void addMeal(Meal meal){
-//        SQLiteDatabase db = this.getWritableDatabase();
-//
-//        ContentValues values = new ContentValues();
-//        values.put(KEY_NAME, meal.getName());
-//        values.put(KEY_TYPE, meal.getType());
-//        values.put(KEY_CALORIES, meal.getCalories());
-//
-//        db.insert(TABLE_NAME, null, values);
-//
-//        db.close();
-//    }
-
     public boolean addMeal(Meal meal){
         SQLiteDatabase db = this.getWritableDatabase();
 
@@ -77,37 +64,6 @@ public class FoodTrackerDatabase extends SQLiteOpenHelper {
             return true;
         }
     }
-
-//    public boolean insertData(String name, String type, String calories) {
-//        SQLiteDatabase mMyDatabase = this.getReadableDatabase();
-//        ContentValues contentValues = new ContentValues();
-//        contentValues.put(COL_2, name);
-//        contentValues.put(COL_3, type);
-//        contentValues.put(COL_4, calories);
-//        long result = mMyDatabase.insert(TABLE_NAME, null, contentValues);
-//        if (result == -1) {
-//            return false;
-//        } else {
-//            return true;
-//
-//        }
-//    }
-
-//    public Meal getLatestEntry() {
-//        String query = "SELECT * FROM " + TABLE_NAME + " WHERE id = MAX(id)";
-//
-//        SQLiteDatabase db = this.getWritableDatabase();
-//        Cursor cursor = db.rawQuery(query, null);
-//
-//        Meal meal = null;
-//        meal = new Meal();
-//        meal.setId(Integer.parseInt(cursor.getString(0)));
-//        meal.setName(cursor.getString(1));
-//        meal.setType(cursor.getString(2));
-//        meal.setCalories(Integer.parseInt(cursor.getString(3)));
-//
-//        return meal;
-//    }
 
     public Meal getMeal(int id){
 
@@ -151,14 +107,14 @@ public class FoodTrackerDatabase extends SQLiteOpenHelper {
         return allMeals;
     }
 
-    public int countAllMeals() {
-        String countQuery = "SELECT * FROM " + TABLE_NAME;
-        SQLiteDatabase db = this.getReadableDatabase();
-        Cursor cursor = db.rawQuery(countQuery, null);
-        cursor.close();
-
-        return cursor.getCount();
-    }
+//    public int countAllMeals() {
+//        String countQuery = "SELECT * FROM " + TABLE_NAME;
+//        SQLiteDatabase db = this.getReadableDatabase();
+//        Cursor cursor = db.rawQuery(countQuery, null);
+//        cursor.close();
+//
+//        return cursor.getCount();
+//    }
 
     public int updateMeal(Meal meal) {
         SQLiteDatabase db = this.getWritableDatabase();
@@ -184,24 +140,5 @@ public class FoodTrackerDatabase extends SQLiteOpenHelper {
         db.delete(TABLE_NAME, null, null);
         db.close();
     }
-
-//
-//    public Cursor getTotalCalories() {
-//        SQLiteDatabase mMyDatabase = this.getReadableDatabase();
-//        Cursor resultCalories = mMyDatabase.rawQuery("SELECT SUM(CALORIES) FROM " + TABLE_NAME,
-//                null);
-//        return resultCalories;
-//    }
-
-////    public boolean updateLastMeal(String id, String name, String type, String calories) {
-////        SQLiteDatabase foodTrackerDatabase = this.getWritableDatabase();
-////        ContentValues contentValues = new ContentValues();
-////        contentValues.put(COL_1, id);
-////        contentValues.put(COL_2, name);
-////        contentValues.put(COL_3, type);
-////        contentValues.put(COL_4, calories);
-////        foodTrackerDatabase.update(TABLE_NAME, contentValues, "ID = (SELECT MAX(ID))", new String[]{id});
-////        return true;
-////    }
 
 }
