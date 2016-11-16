@@ -21,7 +21,8 @@ public class FoodTrackerDatabase extends SQLiteOpenHelper {
     private static final String KEY_NAME = "name";
     private static final String KEY_TYPE = "type";
     private static final String KEY_CALORIES = "calories";
-    private static final String[] COLUMNS = {KEY_ID,KEY_NAME,KEY_TYPE,KEY_CALORIES};
+    private static final String KEY_DATE = "date";
+    private static final String[] COLUMNS = {KEY_ID,KEY_NAME,KEY_TYPE,KEY_CALORIES,KEY_DATE};
 
     public FoodTrackerDatabase(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -31,9 +32,10 @@ public class FoodTrackerDatabase extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         String CREATE_MEALS_TABLE = "CREATE TABLE meals ( " +
                 "id INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                "name TEXT, "+
+                "name TEXT, " +
                 "type TEXT, " +
-                "calories INTEGER)";
+                "calories INTEGER, " +
+                "date TEXT)";
 
         db.execSQL(CREATE_MEALS_TABLE);
     }
@@ -65,6 +67,7 @@ public class FoodTrackerDatabase extends SQLiteOpenHelper {
         values.put(KEY_NAME, meal.getName());
         values.put(KEY_TYPE, meal.getType());
         values.put(KEY_CALORIES, meal.getCalories());
+        values.put(KEY_DATE, meal.getDate());
 
         long result = db.insert(TABLE_NAME, null, values);
 
@@ -118,7 +121,8 @@ public class FoodTrackerDatabase extends SQLiteOpenHelper {
             cursor.moveToFirst();
 
         Meal meal = new Meal((Integer.parseInt(cursor.getString(0))),
-                cursor.getString(0), cursor.getString(2), (Integer.parseInt(cursor.getString(3))));
+                cursor.getString(0), cursor.getString(2),
+                (Integer.parseInt(cursor.getString(3))), cursor.getString(4));
 
         return meal;
     }
@@ -139,6 +143,7 @@ public class FoodTrackerDatabase extends SQLiteOpenHelper {
                 meal.setName(cursor.getString(1));
                 meal.setType(cursor.getString(2));
                 meal.setCalories(Integer.parseInt(cursor.getString(3)));
+                meal.setDate(cursor.getString(4));
 
                 allMeals.add(meal);
             } while (cursor.moveToNext());
@@ -161,6 +166,7 @@ public class FoodTrackerDatabase extends SQLiteOpenHelper {
         values.put(KEY_NAME, meal.getName());
         values.put(KEY_TYPE, meal.getType());
         values.put(KEY_CALORIES, meal.getCalories());
+        values.put(KEY_DATE, meal.getDate());
 
         return db.update(TABLE_NAME, values, KEY_ID + " = ?",
                 new String[] {String.valueOf(meal.getId())});

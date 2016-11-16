@@ -21,7 +21,7 @@ public class InputMealActivity extends AppCompatActivity {
 
     FoodTrackerDatabase mFoodTrackerDatabase;
     Meal meal;
-    EditText mEditName, mEditCalories;
+    EditText mEditName, mEditCalories, mEditDate;
     Spinner mSpinnerType;
     Button mBtnAddMeal;
 
@@ -71,6 +71,7 @@ public class InputMealActivity extends AppCompatActivity {
         mEditName = (EditText) findViewById(R.id.text_to_save_name);
         mSpinnerType = (Spinner) findViewById(R.id.spinner_meal_type);
         mEditCalories = (EditText) findViewById(R.id.text_to_save_calories);
+        mEditDate = (EditText) findViewById(R.id.text_to_save_date);
         mBtnAddMeal = (Button) findViewById(R.id.button_input_meal);
 
         String[] mealTypes = new String[]{"Breakfast", "Lunch", "Dinner", "Snack", "Drink"};
@@ -83,7 +84,8 @@ public class InputMealActivity extends AppCompatActivity {
             public void onClick(View view) {
                 String choice = mSpinnerType.getSelectedItem().toString();
                 int calories = Integer.parseInt(mEditCalories.getText().toString());
-                meal = new Meal(mEditName.getText().toString(), choice, calories);
+                meal = new Meal(mEditName.getText().toString(), choice, calories,
+                        mEditDate.getText().toString());
                 boolean isInsterted = mFoodTrackerDatabase.addMeal(meal);
                 if(isInsterted == true) {
                     Toast.makeText(InputMealActivity.this,

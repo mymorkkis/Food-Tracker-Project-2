@@ -10,22 +10,25 @@ public class Meal {
     private String mName;
     private String mType;
     private int mCalories;
+    private String mDate;
 
     public Meal() {
 
     }
 
-    public Meal(int id, String name, String type, int calories) {
+    public Meal(int id, String name, String type, int calories, String date) {
         this.mId = id;
         this.mName = name;
         this.mType = type;
         this.mCalories = calories;
+        this.mDate = date;
     }
 
-    public Meal(String name, String type, int calories) {
+    public Meal(String name, String type, int calories, String date) {
         this.mName = name;
         this.mType = type;
         this.mCalories = calories;
+        this.mDate = date;
     }
 
     public void setId(int id) {
@@ -44,6 +47,10 @@ public class Meal {
         this.mCalories = calories;
     }
 
+    public void setDate(String date) {
+        this.mDate = date;
+    }
+
     public int getId() {
         return this.mId;
     }
@@ -58,6 +65,10 @@ public class Meal {
 
     public int getCalories() {
         return this.mCalories;
+    }
+
+    public String getDate() {
+        return this.mDate;
     }
 
 

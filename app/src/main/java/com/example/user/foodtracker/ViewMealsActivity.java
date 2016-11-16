@@ -70,7 +70,9 @@ public class ViewMealsActivity extends AppCompatActivity {
         for (Meal result : results) {
             buffer.append("Name: " + result.getName() + "\n");
             buffer.append("Type: " + result.getType() + "\n");
-            buffer.append("Calories: " + result.getCalories() + "\n\n");
+            buffer.append("Calories: " + result.getCalories() + "\n");
+            buffer.append("Date: " + result.getDate() + "\n\n");
+
         }
         showMessage("Previous Meals", buffer.toString());
 
@@ -85,8 +87,10 @@ public class ViewMealsActivity extends AppCompatActivity {
                 for (Meal result : results) {
                             buffer.append("Name: " + result.getName() + "\n");
                             buffer.append("Type: " + result.getType() + "\n");
-                            buffer.append("Calories: " + result.getCalories() + "\n\n");
-                        }
+                            buffer.append("Calories: " + result.getCalories() + "\n");
+                            buffer.append("Date: " + result.getDate() + "\n\n");
+
+                }
                         showMessage("Previous Meals", buffer.toString());
             }
         });

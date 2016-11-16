@@ -81,7 +81,7 @@ public class SearchMealsActivity extends AppCompatActivity {
 
         for (Meal meal : allMeals) {
             allItems.add(meal.getName() + " / " + meal.getType() + " / " +
-                    String.valueOf(meal.getCalories()) + " kcal");
+                    String.valueOf(meal.getCalories()) + " kcal / " + meal.getDate());
         }
         return allItems;
     }

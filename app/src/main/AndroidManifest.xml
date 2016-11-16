@@ -21,7 +21,7 @@
 
         <activity
             android:name=".InputMealActivity"
-            android:label="@string/take_to_meal_activity"
+            android:label="@string/input_meal_activity_title"
             android:parentActivityName=".FoodTracker">
         </activity>
 
