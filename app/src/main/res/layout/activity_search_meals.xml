@@ -3,13 +3,8 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <ListView
-        android:id="@+id/search_meals"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-    </ListView>
-
     <EditText
+        android:layout_marginTop="10dp"
         android:textSize="25dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -17,10 +12,18 @@
 
     <Button
         android:text="Search for Meal"
-        android:layout_marginTop="15dp"
-        android:layout_width="235dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="40dp"
+        android:layout_width="186dp"
         android:layout_height="wrap_content"
         android:id="@+id/button_input_meal"
         android:backgroundTint="@android:color/darker_gray" />
+
+    <ListView
+        android:id="@+id/search_meals"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+    </ListView>
+
 
 </LinearLayout>
