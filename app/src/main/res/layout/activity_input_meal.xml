@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:weightSum="1">
@@ -28,6 +29,7 @@
         android:id="@+id/spinner_meal_type"
         android:layout_width="match_parent"
         android:layout_height="83dp"
+        android:backgroundTint="@android:color/transparent"
         android:background="@android:drawable/btn_dropdown"
         android:spinnerMode="dropdown"/>
 
@@ -44,18 +46,28 @@
         android:layout_height="wrap_content"
         android:id="@+id/text_to_save_calories"/>
 
-    <Button
-        android:text="Input Meal"
-        android:layout_marginTop="30dp"
-        android:layout_width="152dp"
+    <TextView
+        android:text="Date: "
+        android:textSize="35dp"
+        android:layout_width="267dp"
         android:layout_height="wrap_content"
-        android:id="@+id/button_input_meal"/>
+        android:id="@+id/textViewDate"/>
+
+    <EditText
+        android:textSize="25dp"
+        android:hint="@string/date_format"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/text_to_save_date"/>
 
     <Button
-        android:text="Edit Last Meal"
-        android:layout_marginTop="30dp"
-        android:layout_width="152dp"
+        android:text="Input Meal"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="15dp"
+        android:layout_width="235dp"
         android:layout_height="wrap_content"
-        android:id="@+id/button_edit_meal"/>
+        android:id="@+id/button_input_meal"
+        android:backgroundTint="@android:color/darker_gray" />
+
 
 </LinearLayout>

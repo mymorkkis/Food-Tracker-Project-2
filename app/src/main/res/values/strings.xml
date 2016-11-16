@@ -2,6 +2,7 @@
     <string name="app_name">FoodTracker</string>
     <!--<string name="input_meal_activity_title">Meal Input Page</string>-->
     <string name="take_to_meal_activity">Input Meal</string>
+    <string name="date_format">dd/mm/yyyy</string>
     <!--<string name="view_meal_activity_title">Previous Meals</string>-->
     <string name="take_to_view_meals_activity">Meal History</string>
     <string name="take_to_search_meals_activity">Search Meal</string>

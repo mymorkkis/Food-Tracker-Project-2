@@ -23,7 +23,7 @@ public class InputMealActivity extends AppCompatActivity {
     Meal meal;
     EditText mEditName, mEditCalories;
     Spinner mSpinnerType;
-    Button mBtnAddMeal, mBtnEditLastMeal;
+    Button mBtnAddMeal;
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -72,7 +72,6 @@ public class InputMealActivity extends AppCompatActivity {
         mSpinnerType = (Spinner) findViewById(R.id.spinner_meal_type);
         mEditCalories = (EditText) findViewById(R.id.text_to_save_calories);
         mBtnAddMeal = (Button) findViewById(R.id.button_input_meal);
-        mBtnEditLastMeal = (Button) findViewById(R.id.button_edit_meal);
 
         String[] mealTypes = new String[]{"Breakfast", "Lunch", "Dinner", "Snack", "Drink"};
         ArrayAdapter<String> adapter = new ArrayAdapter<>(
@@ -98,15 +97,6 @@ public class InputMealActivity extends AppCompatActivity {
                 }
             }
         });
-
-//        mBtnEditLastMeal.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Meal lastMeal = mFoodTrackerDatabase.getLatestEntry();
-//                mEditName.setText(lastMeal.getName());
-//                mEditCalories.setText(lastMeal.getCalories());
-//            }
-//        });
 
     }
 
