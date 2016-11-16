@@ -71,10 +71,4 @@ public class Meal {
         return this.mDate;
     }
 
-
-//    @Override
-//    public String toString() {
-//        return "Meals [id=" + mId +", name=" + mName +
-//                ", type=" + mType + ", calories=" + mCalories + "]";
-//    }
 }

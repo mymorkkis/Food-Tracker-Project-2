@@ -6,6 +6,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
@@ -16,6 +19,7 @@ import java.util.ArrayList;
 public class FoodTracker extends AppCompatActivity {
 
     FoodTrackerDatabase mFoodTrackerDatabase;
+    TextView mTextView;
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -57,17 +61,21 @@ public class FoodTracker extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_input_meal);
+        setContentView(R.layout.activity_main);
         mFoodTrackerDatabase = new FoodTrackerDatabase(this);
+        mTextView = (TextView) findViewById(R.id.text_show_calories);
+        mTextView.setText(getAllCalories());
 
     }
 
-    public int getAllCalories() {
+    public String getAllCalories() {
         int counter = 0;
         ArrayList<Meal> allMeals = mFoodTrackerDatabase.getAllMeals();
         for (Meal meal : allMeals) {
             counter += meal.getCalories();
         }
-        return counter;
+        String calorieTotal = "You have eaten a total of " + String.valueOf(counter)
+                + " calories so far!";
+        return calorieTotal;
     }
 }

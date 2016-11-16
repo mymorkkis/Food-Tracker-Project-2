@@ -80,7 +80,7 @@ public class SearchMealsActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 String selected = (String)mListView.getItemAtPosition(position);
                 Intent intentInput = new Intent(SearchMealsActivity.this, EditMealsActivity.class);
-                intentInput.putExtra("item", selected);
+//                intentInput.putExtra("item", selected);
                 startActivity(intentInput);
             }
         });
