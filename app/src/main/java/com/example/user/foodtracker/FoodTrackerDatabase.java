@@ -5,7 +5,6 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-
 import java.util.ArrayList;
 
 /**
@@ -104,17 +103,9 @@ public class FoodTrackerDatabase extends SQLiteOpenHelper {
                 allMeals.add(meal);
             } while (cursor.moveToNext());
         }
+        cursor.close();
         return allMeals;
     }
-
-//    public int countAllMeals() {
-//        String countQuery = "SELECT * FROM " + TABLE_NAME;
-//        SQLiteDatabase db = this.getReadableDatabase();
-//        Cursor cursor = db.rawQuery(countQuery, null);
-//        cursor.close();
-//
-//        return cursor.getCount();
-//    }
 
     public int updateMeal(Meal meal) {
         SQLiteDatabase db = this.getWritableDatabase();

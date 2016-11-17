@@ -2,7 +2,6 @@ package com.example.user.foodtracker;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -23,7 +22,7 @@ public class SearchMealsActivity extends AppCompatActivity {
 
     FoodTrackerDatabase mFoodTrackerDatabase;
     ListView mListView;
-//    Button mBtnViewAllMeals, mBtnCountMeals;
+//    Button mBtnSearchMeals;
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

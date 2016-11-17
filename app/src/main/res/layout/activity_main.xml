@@ -10,7 +10,7 @@
         android:layout_height="match_parent"
         android:gravity="center"
         android:text=""
-        android:textSize="35dp"
+        android:textSize="35sp"
         android:id="@+id/text_show_calories"/>
 
 </LinearLayout>
