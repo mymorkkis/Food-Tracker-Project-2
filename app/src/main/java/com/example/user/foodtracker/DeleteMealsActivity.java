@@ -76,7 +76,7 @@ public class DeleteMealsActivity extends AppCompatActivity {
                 Toast.makeText(DeleteMealsActivity.this,
                         "Today is the first day of the rest of your life!", Toast.LENGTH_LONG).show();
 
-                Intent intentInput = new Intent(DeleteMealsActivity.this, FoodTracker.class);
+                Intent intentInput = new Intent(DeleteMealsActivity.this, FoodTrackerMainActivity.class);
                 startActivity(intentInput);
             }
         });

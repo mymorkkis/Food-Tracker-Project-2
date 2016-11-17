@@ -13,7 +13,7 @@ import java.util.ArrayList;
  * Created by user on 13/11/2016.
  */
 
-public class FoodTracker extends AppCompatActivity {
+public class FoodTrackerMainActivity extends AppCompatActivity {
 
     FoodTrackerDatabase mFoodTrackerDatabase;
     TextView mTextView;
@@ -28,27 +28,27 @@ public class FoodTracker extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == R.id.action_input_meal_link) {
-            Intent intentInput = new Intent(FoodTracker.this, InputMealActivity.class);
+            Intent intentInput = new Intent(FoodTrackerMainActivity.this, InputMealActivity.class);
             startActivity(intentInput);
             return true;
         }
         if (item.getItemId() == R.id.action_view_meals_link) {
-            Intent intentShow = new Intent(FoodTracker.this, ViewMealsActivity.class);
+            Intent intentShow = new Intent(FoodTrackerMainActivity.this, ViewMealsActivity.class);
             startActivity(intentShow);
             return true;
         }
         if (item.getItemId() == R.id.action_search_meals_link) {
-            Intent intentShow = new Intent(FoodTracker.this, SearchMealsActivity.class);
+            Intent intentShow = new Intent(FoodTrackerMainActivity.this, SearchMealsActivity.class);
             startActivity(intentShow);
             return true;
         }
         if (item.getItemId() == R.id.action_edit_meals_link) {
-            Intent intentEdit = new Intent(FoodTracker.this, EditMealsActivity.class);
+            Intent intentEdit = new Intent(FoodTrackerMainActivity.this, EditMealsActivity.class);
             startActivity(intentEdit);
             return true;
         }
         if (item.getItemId() == R.id.action_delete_meals_link) {
-            Intent intentEdit = new Intent(FoodTracker.this, DeleteMealsActivity.class);
+            Intent intentEdit = new Intent(FoodTrackerMainActivity.this, DeleteMealsActivity.class);
             startActivity(intentEdit);
             return true;
         }

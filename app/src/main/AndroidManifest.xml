@@ -9,7 +9,7 @@
         android:theme="@style/AppTheme">
 
         <activity
-            android:name=".FoodTracker"
+            android:name=".FoodTrackerMainActivity"
             android:label="@string/app_name">
 
             <intent-filter>
@@ -22,31 +22,31 @@
         <activity
             android:name=".InputMealActivity"
             android:label="@string/input_meal_activity_title"
-            android:parentActivityName=".FoodTracker">
+            android:parentActivityName=".FoodTrackerMainActivity">
         </activity>
 
         <activity
             android:name=".ViewMealsActivity"
             android:label="@string/view_meal_activity_title"
-            android:parentActivityName=".FoodTracker">
+            android:parentActivityName=".FoodTrackerMainActivity">
         </activity>
 
         <activity
             android:name=".SearchMealsActivity"
             android:label="@string/search_meal_activity_title"
-            android:parentActivityName=".FoodTracker">
+            android:parentActivityName=".FoodTrackerMainActivity">
         </activity>
 
         <activity
             android:name=".EditMealsActivity"
             android:label="@string/edit_meal_activity_title"
-            android:parentActivityName=".FoodTracker">
+            android:parentActivityName=".FoodTrackerMainActivity">
         </activity>
 
         <activity
             android:name=".DeleteMealsActivity"
             android:label="@string/delete_all_data_activity_title"
-            android:parentActivityName=".FoodTracker">
+            android:parentActivityName=".FoodTrackerMainActivity">
         </activity>
 
     </application>
