@@ -14,16 +14,16 @@ Goal: Practice OO and UI design with what you have learned in Java / Android wee
 
 You are required to write an Android app that allows a user to track the food they eat. Users should be able to enter what they eat, when and for which meal.
 
-## Extra
+## Extras
 
 The app should show the user a record of what they have eaten over a given period.
 
 ## Dependencies 
 
-Android Studio - install instructions here
+Android Studio 
 
 ## Instructions
 
-Clone repository using git clone https://github.com/mv87/Food-Tracker-Project-2
+Clone repository using git clone https://github.com/mv86/Food-Tracker-Project-2
 Move repository to android studio projects folder.
 Open Android Studio and select Open an existing Android Studio project and select project.
